@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>Lesson 6</title>
+        <style>
+            div.wrap {
+                text-align: center;
+            }
+            div.style1{
+                width: 300px;
+                display: inline-block;
+                text-align:center;
+                font-size: 20px;
+            }     
+        </style>
+        <script>
+            function checkselect(a,b)
+            {
+                var picselect = a
+                
+                
+                if (b=="1")
+                {
+                    document.getElementById("pic3a").src=a;
+                    if (a=="apple.png")
+                    {
+                        document.getElementById("textdisplay").innerHTML = "Yes, you are correct.<br>"
+                    }else{
+                        document.getElementById("textdisplay").innerHTML = "No, you are wrong.<br> Please choose another."
+
+                    }
+
+                }
+                if (b=="2")
+                {
+                    document.getElementById("pic3b").src=a;
+                    if (a=="coffee.png")
+                    {
+                        document.getElementById("textdisplay2").innerHTML = "Yes, you are correct.<br>"
+
+                    }else{
+                        document.getElementById("textdisplay2").innerHTML = "No, you are wrong.<br> Please choose another."
+
+                    }
+
+                }
+                
+
+            }
+            
+            function resetfunc()
+            {
+                document.getElementById("pic3a").src="none.png";
+                document.getElementById("pic3b").src="none.png";
+                document.getElementById("textdisplay").innerHTML="";
+                document.getElementById("textdisplay2").innerHTML="";
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div class="wrap">
+            
+            <br>
+            <div class="style1"> 
+                <img src="orange.png" width="200" id="pic1a" onclick="javascript:checkselect('orange.png','1')"><br>
+            </div>
+            <div class="style1"> 
+                <img src="apple.png" width="200" id="pic2a" onclick="javascript:checkselect('apple.png','1')"><br>
+            </div>
+            <div class="style1"> 
+                Choose the apple from the right:
+                <img src="none.png" width="200" id="pic3a"><br>
+            </div>
+            <Br>
+            <div class="style1" id="textdisplay"></div>
+            <br>
+            <br>
+                <div class="style1"> 
+                    <img src="coffee.png" width="200" id="pic1b" onclick="javascript:checkselect('coffee.png','2')"><br>
+                </div>
+                <div class="style1"> 
+                    <img src="milk.png" width="200" id="pic2b" onclick="javascript:checkselect('milk.png','2')"><br>
+                </div>
+                <div class="style1"> 
+                    Choose the coffee from the right:
+                    <img src="none.png" width="200" id="pic3b"><br>
+                </div>
+                <Br>
+
+            <div class="style1" id="textdisplay2"></div>
+            <br>
+            <input type="button" onClick="javascript:resetfunc()" value="Reset">
+            
+        </div>
+        
+    </body>
+</html>
